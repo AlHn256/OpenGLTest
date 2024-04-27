@@ -61,6 +61,7 @@ namespace TestWinForm
             uint[] indices =
             {
             0u, 1u, 3u,
+            5u, 2u, 0u,
             1u, 2u, 3u
             };
 
@@ -116,9 +117,10 @@ namespace TestWinForm
             const uint positionLoc = 0;
             _gl.EnableVertexAttribArray(positionLoc);
             _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), (void*)0);
+
             _gl.BindVertexArray(0);
-            _gl.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
             _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
+            _gl.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
         }
 
         private static void OnUpdate(double deltaTime) { }
